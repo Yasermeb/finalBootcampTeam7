@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Final_Automation_Framework_Team7" />
+        <module name="finalBootcampTeam7" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
