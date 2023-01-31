@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Automation_BootCamp" target="11" />
+      <module name="FreeCRMTest" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
