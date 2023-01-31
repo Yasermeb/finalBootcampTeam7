@@ -6,7 +6,10 @@
     <test name="test">
         <classes>
 <!--            <class name="freecrm.LoginPageTest"></class>-->
-            <class name="freecrm.ContactsPageTest"></class>
+<!--            <class name="freecrm.ContactsPageTest"></class>-->
+<!--            <class name="freecrm.TestLogin"></class>-->
+            <class name="freecrm.TestSignUp"></class>
+
 
         </classes>
     </test>

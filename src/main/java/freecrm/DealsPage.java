@@ -1,5 +1,6 @@
 package freecrm;
 
-public class DealsPage{
+public class DealsPage {
+
 
 }

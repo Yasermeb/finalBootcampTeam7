@@ -16,7 +16,7 @@ public class LoginPageTest extends CommonAPI {
 	public void loginPageTitleTest(){
 		Assert.assertTrue(false);
 		HomePage homePage =new HomePage(driver);
-		homePage.clickOnLogin();
+		homePage.clickOnLoginButton();
 		Assert.assertTrue(false);
 		try {
 			Thread.sleep(3000);
