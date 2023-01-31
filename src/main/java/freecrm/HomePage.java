@@ -1,78 +1,57 @@
 package freecrm;
 
 import base.CommonAPI;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends CommonAPI {
 
-	@FindBy(xpath = "//a[text()='Log In']")
-	WebElement loginBtn;
-
-//	@FindBy(xpath = "//span[contains(text(),'Yaser Mebarki')]")
-//	WebElement userNameLabel;
-
-	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
-	WebElement contactsLink;
-	
-	@FindBy(xpath = "//a[contains(text(),'New Contact')]")
-	WebElement newContactLink;
-	
-
-	@FindBy(xpath = "//a[contains(text(),'Deals')]")
-	WebElement dealsLink;
-
-	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
-	WebElement tasksLink;
+	Logger LOG = LogManager.getLogger(HomePage.class.getName());
 
 	// Initializing the Page Objects:
-	public HomePage(WebDriver driver) {
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
+	public HomePage(WebDriver driver){      //This will initiate all elements of this class
+		PageFactory.initElements(driver,this);
 	}
-	
+
+
+	@FindBy(xpath = "//a[text()='Log In']")
+	WebElement loginButton;
+
+	@FindBy(xpath = "//a[contains(text(),'Sign Up')]")
+	WebElement SignUpButton;
+
+	@FindBy(xpath = "//a[contains(text(),'Compare')]")
+	WebElement CompareButton;
+
+	@FindBy(xpath = "//i[@class='trash alternate outline icon']")
+	WebElement TrashIcon;
+
+
 	public String verifyHomePageTitle(){
 		return driver.getTitle();
 	}
 
-
-	
-	public boolean verifyCorrectUserName(){
-		return userNameLabel.isDisplayed();
+	public void clickOnLoginButton(){
+		clickOn(loginButton);
+		LOG.info("click on login button success");
 	}
 
-
-	public ContactsPage clickOnContactsLink(){
-		contactsLink.click();
-		return new ContactsPage();
-	}
-	
-	public DealsPage clickOnDealsLink(){
-		dealsLink.click();
-		return new DealsPage();
-	}
-	
-	public TasksPage clickOnTasksLink(){
-		tasksLink.click();
-		return new TasksPage();
-	}
-	
-	public void clickOnNewContactLink(){
-		Actions action = new Actions(driver);
-		action.moveToElement(contactsLink).build().perform();
-		newContactLink.click();
-		
+	public void clickOnSignUpButton(){
+		clickOn(SignUpButton);
+		LOG.info("click on Sign Up button success");
 	}
 
-	
-	
-	
-	
-	
-	
+	public void clickOnCompareButton(){
+		clickOn(CompareButton);
+		LOG.info("click on Compare button success");
+	}
 
+	public void clickOnTrashIcon(){
+		clickOn(TrashIcon);
+		LOG.info("click on Trash Icn success");
+	}
 }
